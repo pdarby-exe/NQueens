@@ -37,7 +37,7 @@ public class QueenSimulation{
       for(int j = 1; j <= n; j++){
          
        qstack.push(new Queen(i,j));
-      
+       
       //checks for conflicts     
       
       if(qstack.size() > 1){
@@ -53,8 +53,13 @@ public class QueenSimulation{
          
       }
       
-      if(qstack.size() == 5){
+      if(qstack.size() == n){
             solutions++;
+
+            if(solutions > 1){
+                System.out.println();
+            }
+
             System.out.println("solution " + solutions + ": ");
       
             for(int k = 1; k <= qstack.size(); k++){
@@ -70,7 +75,7 @@ public class QueenSimulation{
          i = qstack.peek().getX();
          j = qstack.peek().getY();
          
-         System.out.println(i + " : " + j);
+         //System.out.println(i + " : " + j);
             
          qstack.pop();
        }
